@@ -304,10 +304,13 @@ namespace NUnit.Util
 		public virtual TestResult EndRun()
 		{
             Log.Info("EndRun");
-            TestResult suiteResult = new TestResult(Test as TestInfo);
+            var results = new ArrayList();
             foreach (TestRunner runner in runners)
-                suiteResult.AddResult(runner.EndRun());
+                results.Add(runner.EndRun());
 
+            TestResult suiteResult = new TestResult(Test as TestInfo);
+            foreach (TestResult result in results)
+                suiteResult.AddResult(result);
 			return suiteResult;
 		}
 
@@ -348,10 +351,6 @@ namespace NUnit.Util
                 foreach (TestRunner runner in runners)
                     if (runner.Running)
                         return;
-
-                this.testResult = new TestResult(this.aggregateTest);
-                foreach (TestRunner runner in runners)
-                    this.testResult.AddResult(runner.TestResult);
 
                 listener.RunFinished(this.TestResult);
             }
