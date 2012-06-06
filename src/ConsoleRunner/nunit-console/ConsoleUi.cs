@@ -310,6 +310,8 @@ namespace NUnit.ConsoleRunner
             package.Settings["DefaultTimeout"] = options.timeout;
             package.Settings["WorkDirectory"] = this.workDir;
             package.Settings["StopOnError"] = options.stoponerror;
+            if (options.parallel)
+                package.Settings["RunInParallel"] = options.parallel;
 
             if (options.apartment != System.Threading.ApartmentState.Unknown)
                 package.Settings["ApartmentState"] = options.apartment;

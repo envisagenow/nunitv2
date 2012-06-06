@@ -305,8 +305,8 @@ namespace NUnit.Util
 		{
             Log.Info("EndRun");
             TestResult suiteResult = new TestResult(Test as TestInfo);
-			foreach( TestRunner runner in runners )
-				suiteResult.Results.Add( runner.EndRun() );
+            foreach (TestRunner runner in runners)
+                suiteResult.AddResult(runner.EndRun());
 
 			return suiteResult;
 		}

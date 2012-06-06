@@ -69,6 +69,9 @@ namespace NUnit.ConsoleRunner
         [Option(Description = "Apartment for running tests: MTA (Default), STA")]
         public System.Threading.ApartmentState apartment;
 
+        [Option(Description = "Run test runners in parallel")]
+        public bool parallel;
+
         [Option(Description = "Disable shadow copy when running in separate domain")]
 		public bool noshadow;
 
