@@ -1,0 +1,9 @@
+Backup/
+UpgradeLog.htm
+builds/
+*.suo
+*.user
+[bB]in
+[oO]bj
+src/GeneratedAssemblyInfo.cs
+msbuild.log
