@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Normalize line endings
 * text=auto
 
@@ -5,3 +6,6 @@
 # Prevent files from being exported
 .gitattributes export-ignore
 .gitignore     export-ignore
+=======
+*.snk           -text
+>>>>>>> multi-process_2.6.0
